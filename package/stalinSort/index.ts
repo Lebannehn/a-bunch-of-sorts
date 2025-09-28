@@ -3,12 +3,12 @@ type TerrorOptions = {
 	 * Sort by ascending order or not
 	 * @default true
 	 */
-	ascendingOrder: boolean,
+	ascendingOrder?: boolean,
 	/**
 	 * Remove duplicates
 	 * @default false
 	 */
-	uniqueValues: boolean,
+	uniqueValues?: boolean,
 };
 
 /**
@@ -18,19 +18,28 @@ type TerrorOptions = {
  * @param {number[]} values an array of numbers
  * @param {TerrorOptions} options a set of options
  */
-export function stalinSort(values: number[] = [], options: TerrorOptions): number[] {
+export function stalinSort(values: number[] = [], options: TerrorOptions = {}): number[] {
+	options = {
+		ascendingOrder: true,
+		uniqueValues: false,
+		...options
+	};
+
 	if (!values.length) {
 		return values;
 	}
 
-	function mercy(previous: number[], next: number): boolean {
+	function mercy(previous: number, next: number): boolean {
+		if (options.uniqueValues && options.ascendingOrder) {
+			console.log('is uniq asc', previous, next, next > previous);
+		}
 		return options.ascendingOrder
-			? options.uniqueValues ? next > previous[previous.length - 1] : next >= previous[previous.length - 1]
-			: options.uniqueValues ? next < previous[previous.length - 1] : next <= previous[previous.length - 1];
+			? options.uniqueValues ? next > previous : next >= previous
+			: options.uniqueValues ? next < previous : next <= previous;
 	}
 
 	return values.reduce(
-		(previous: number[], next: number, index: number) => !index || mercy(previous, next)
+		(previous: number[], next: number, index: number) => !index || mercy(previous[previous.length - 1], next)
 			? [...previous, next]
 			: previous,
 		[]
