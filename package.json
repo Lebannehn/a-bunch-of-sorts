@@ -1,6 +1,6 @@
 {
     "name": "@27-lanterns/bunch-of-sorts",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "A bunch of sorting utils",
     "author": "Evgenii Astapushkin <lebannehn.karnimirie@gmail.com>",
     "keywords": [
@@ -20,15 +20,16 @@
         "url": "git+https://github.com/lebannehn/bunch-of-sorts.git"
     },
     "license": "MIT",
-    "main": "index.js",
-    "types": "index.d.ts",
-    "module": "index.mjs",
+    "main": "/package/index.js",
+    "types": "/package/index.d.ts",
+    "module": "/package/index.mjs",
     "sideEffects": false,
     "scripts": {
         "tsup:build": "tsup",
         "tsup:build:watch": "tsup --watch"
     },
     "devDependencies": {
+        "@types/node": "^24.5.2",
         "tsup": "^8.5.0",
         "typescript": ">=4.1.6"
     },

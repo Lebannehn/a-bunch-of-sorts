@@ -7,9 +7,10 @@ export default defineConfig({
 	sourcemap: true,
 	dts: true,
 	clean: true,
-	minify: false,
+	minify: true,
 	target: 'es2016',
-	onSuccess: async () => {
+	outDir: './dist/package',
+	onSuccess: () => {
 		execSync('cp README.MD package.json LICENSE dist/');
 	},
 });
