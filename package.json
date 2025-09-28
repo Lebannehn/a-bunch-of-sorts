@@ -25,16 +25,10 @@
     "module": "index.mjs",
     "sideEffects": false,
     "scripts": {
-        "gulp:build": "npx gulp build",
         "tsup:build": "tsup",
         "tsup:build:watch": "tsup --watch"
     },
     "devDependencies": {
-        "@types/gulp": "^4.0.17",
-        "del": "^8.0.0",
-        "gulp": "^5.0.1",
-        "gulp-typescript": "^6.0.0-alpha.1",
-        "through2": "^4.0.2",
         "tsup": "^8.5.0",
         "typescript": ">=4.1.6"
     },
