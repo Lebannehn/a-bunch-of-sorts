@@ -6,7 +6,6 @@
         "skipLibCheck": true,
         "declaration": true,
         "removeComments": false,
-        "target": "ES6",
         "alwaysStrict": true,
         "baseUrl": "./package",
         "rootDir": "./package",
@@ -17,6 +16,6 @@
         "package/**/*.ts"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules", "dist"
     ]
 }

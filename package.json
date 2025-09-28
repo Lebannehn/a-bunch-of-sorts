@@ -1,12 +1,15 @@
 {
     "name": "@27-lanterns/bunch-of-sorts",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "A bunch of sorting utils",
     "author": "Evgenii Astapushkin <lebannehn.karnimirie@gmail.com>",
     "keywords": [
         "algo",
+        "algorithm",
         "sort",
-        "sorts"
+        "sorts",
+        "sorting",
+        "sorting algorithm"
     ],
     "bugs": {
         "url": "https://github.com/lebannehn/bunch-of-sorts/issues"
@@ -17,18 +20,23 @@
         "url": "git+https://github.com/lebannehn/bunch-of-sorts.git"
     },
     "license": "MIT",
-    "type": "module",
-    "main": "package/index.ts",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "module": "index.mjs",
+    "sideEffects": false,
     "scripts": {
-        "gulp:build": "npx gulp build"
+        "gulp:build": "npx gulp build",
+        "tsup:build": "tsup",
+        "tsup:build:watch": "tsup --watch"
     },
     "devDependencies": {
-        "typescript": ">=4.1.6",
         "@types/gulp": "^4.0.17",
         "del": "^8.0.0",
         "gulp": "^5.0.1",
         "gulp-typescript": "^6.0.0-alpha.1",
-        "through2": "^4.0.2"
+        "through2": "^4.0.2",
+        "tsup": "^8.5.0",
+        "typescript": ">=4.1.6"
     },
     "engines": {
         "node": ">=8.16.0"
