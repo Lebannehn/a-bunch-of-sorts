@@ -23,6 +23,12 @@
     "main": "/package/index.js",
     "types": "/package/index.d.ts",
     "module": "/package/index.mjs",
+    "exports": {
+        ".": {
+            "import": "./package/index.mjs",
+            "require": "./package/index.js"
+        }
+    },
     "sideEffects": false,
     "scripts": {
         "tsup:build": "tsup",
