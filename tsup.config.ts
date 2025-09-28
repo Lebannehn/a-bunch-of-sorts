@@ -9,7 +9,7 @@ export default defineConfig({
 	clean: true,
 	minify: false,
 	target: 'es2016',
-	onSuccess: () => {
+	onSuccess: async () => {
 		execSync('cp README.MD package.json LICENSE dist/');
 	},
 });
