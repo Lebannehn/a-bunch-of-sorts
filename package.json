@@ -1,7 +1,7 @@
 {
     "name": "@27-lanterns/a-bunch-of-sorts",
     "version": "0.2.0",
-    "description": "A bunch of sorting utils",
+    "description": "A bunch of sorting utils. Useful or not so.",
     "author": "Evgenii Astapushkin <lebannehn.karnimirie@gmail.com>",
     "keywords": [
         "algo",
