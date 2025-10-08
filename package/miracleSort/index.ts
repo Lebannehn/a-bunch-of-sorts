@@ -8,7 +8,7 @@ import { GenericOptions } from '../types';
  * @param {number[]} values
  * @param {GenericOptions} options
  */
-export const miracleSort = (values: number[], options: GenericOptions) => {
+export const miracleSort = (values: number[], options: GenericOptions = {}) => {
 	options = {
 		isAscendingOrder: true,
 		...options
@@ -28,4 +28,6 @@ export const miracleSort = (values: number[], options: GenericOptions) => {
 			}
 		}
 	} while (!isSorted)
+
+	return values;
 };
