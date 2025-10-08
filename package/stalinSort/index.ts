@@ -1,15 +1,12 @@
+import { GenericOptions } from '../types';
+
 type TerrorOptions = {
-	/**
-	 * Sort by ascending order or not
-	 * @default true
-	 */
-	ascendingOrder?: boolean,
 	/**
 	 * Remove duplicates
 	 * @default false
 	 */
 	uniqueValues?: boolean,
-};
+} & GenericOptions;
 
 /**
  * Sort an array of numbers with stalin sort.
@@ -20,7 +17,7 @@ type TerrorOptions = {
  */
 export function stalinSort(values: number[] = [], options: TerrorOptions = {}): number[] {
 	options = {
-		ascendingOrder: true,
+		isAscendingOrder: true,
 		uniqueValues: false,
 		...options
 	};
@@ -30,10 +27,10 @@ export function stalinSort(values: number[] = [], options: TerrorOptions = {}): 
 	}
 
 	function mercy(previous: number, next: number): boolean {
-		if (options.uniqueValues && options.ascendingOrder) {
+		if (options.uniqueValues && options.isAscendingOrder) {
 			console.log('is uniq asc', previous, next, next > previous);
 		}
-		return options.ascendingOrder
+		return options.isAscendingOrder
 			? options.uniqueValues ? next > previous : next >= previous
 			: options.uniqueValues ? next < previous : next <= previous;
 	}
