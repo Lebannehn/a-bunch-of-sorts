@@ -27,9 +27,6 @@ export function stalinSort(values: number[] = [], options: TerrorOptions = {}): 
 	}
 
 	function mercy(previous: number, next: number): boolean {
-		if (options.uniqueValues && options.isAscendingOrder) {
-			console.log('is uniq asc', previous, next, next > previous);
-		}
 		return options.isAscendingOrder
 			? options.uniqueValues ? next > previous : next >= previous
 			: options.uniqueValues ? next < previous : next <= previous;
