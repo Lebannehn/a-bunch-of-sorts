@@ -11,6 +11,8 @@ type TerrorOptions = {
 /**
  * Sort an array of numbers with stalin sort.
  * Stalin sort is a sorting algorithm that removes elements from an array that are out of order.
+ * O(n) time complexity.
+ * O(n) space complexity.
  *
  * @param {number[]} values an array of numbers
  * @param {TerrorOptions} options a set of options
@@ -42,10 +44,4 @@ export function stalinSort(values: number[] = [], options: TerrorOptions = {}): 
 		},
 		[]
 	);
-	// return values.reduce(
-	// 	(previous: number[], next: number, index: number) => !index || mercy(previous[previous.length - 1], next)
-	// 		? [...previous, next]
-	// 		: previous,
-	// 	[]
-	// );
 }
