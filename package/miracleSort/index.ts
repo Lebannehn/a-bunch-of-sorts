@@ -4,6 +4,8 @@ import { GenericOptions } from '../types';
  * Sort an array of numbers with a miracle sort.
  * This function accepts an array of numbers and an options object and waits until some kind of miracle happens, and an array sorts itself.
  * Probably, it will never end and will never return. But who knows? Miracles happen.
+ * O(∞) time complexity.
+ * O(1) space complexity.
  *
  * @param {number[]} values
  * @param {GenericOptions} options
