@@ -1,5 +1,13 @@
 import { GenericOptions } from '../types';
 
+type MiracleSortOptions = {
+	/**
+	 * The prayer to be used for the miracle sort.
+	 * No miracle is guaranteed, but the function will try its best invoking the prayer.
+	 */
+	prayer: string,
+} & GenericOptions;
+
 /**
  * Sort an array of numbers with a miracle sort.
  * This function accepts an array of numbers and an options object and waits until some kind of miracle happens, and an array sorts itself.
@@ -8,9 +16,9 @@ import { GenericOptions } from '../types';
  * O(1) space complexity.
  *
  * @param {number[]} values
- * @param {GenericOptions} options
+ * @param {MiracleSortOptions} options
  */
-export const miracleSort = (values: number[], options: GenericOptions = {}) => {
+export const miracleSort = (values: number[], options: MiracleSortOptions) => {
 	options = {
 		isAscendingOrder: true,
 		...options
@@ -19,6 +27,8 @@ export const miracleSort = (values: number[], options: GenericOptions = {}) => {
 	let isSorted = false;
 
 	do {
+		globalThis.console.log(options.prayer);
+
 		for (let index = 0; index < values.length; index++) {
 			if (options.isAscendingOrder && values[index] >= values[index + 1]) {
 				break;
