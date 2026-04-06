@@ -15,7 +15,7 @@ npm i @27-lanterns/a-bunch-of-sorts
 | Param                 | type            | Optional? | Default value | Description                   |
 |-----------------------|-----------------|-----------|---------------|-------------------------------|
 | values                | `number[]`      | No        | -             | An array of numbers           |
-| options               | `TerrorOptions` | Yes       | `see below`   | An option list                |
+| options               | `TerrorOptions` | Yes       | `see below`   | An option object              |
 | options.ascendingOrder | `boolean`       | Yes       | `true`        | Ascending or descending order |
 | options.uniqueValues   | `boolean`       | Yes       | `false`       | Return only unique values     |
 
@@ -41,7 +41,7 @@ function main() {
 | Param                 | type            | Optional? | Default value | Description                                                                                    |
 |-----------------------|-----------------|-----------|---------------|------------------------------------------------------------------------------------------------|
 | values                | `number[]`      | No        | -             | An array of numbers                                                                            |
-| options               | `TerrorOptions` | Yes       | `see below`   | An option list                                                                                 |
+| options               | `TerrorOptions` | Yes       | `see below`   | An option object                                                                               |
 | options.ascendingOrder | `boolean`       | Yes       | `true`        | Ascending or descending order                                                                  |
 | options.prayer   | `string`        | No        | -             | The prayer text to be used for the miracle sort. Prayer will be invoked before each validation |
 
@@ -71,7 +71,6 @@ function main() {
     miracleSort(array, { ascendingOrder: false, prayer });
 	// [10,9,7,6,6,5,5,4,3,2,2,1,0]
 }
-
 ```
 
 ### Intelligence Sort
@@ -92,4 +91,33 @@ function main() {
     intelligenceSort(array);
     // [1,2,2,3,4,5,0,6,6,5,7,9,10]
 }
+```
+
+### Diddy Sort
+
+It is less of a sorting algorithm and more of a bouncer. Numbers above the preferred limit are removed, then the 
+survivors are sorted.
+
+| Param                 | type            | Optional? | Default value | Description                                 |
+|-----------------------|-----------------|-----------|---------------|---------------------------------------------|
+| values                | `number[]`      | No        | -             | An array of numbers                         |
+| options               | `ViolatingOptions` | Yes       | `see below`   | An option object                            |
+| options.ascendingOrder | `boolean`       | Yes       | `true`        | Ascending or descending order               |
+| options.preferredAgeLimit   | `number`        | Yes       | `18`          | All number above this limit will be removed |
+
+```ts
+
+import { diddySort } from '@27-lanterns/a-bunch-of-sorts';
+
+function main() {
+    const array = [1,2,3,3,9,22,11,61,0,77];
+
+    diddySort(array);
+	// [0,1,2,3,3,9,11]
+    diddySort(array, { ascendingOrder: false });
+	// [11,9,3,3,2,1,0]
+    diddySort(array, { preferredAgeLimit: 7 });
+    // [0,1,2,3,3]
+}
+
 ```
