@@ -73,3 +73,23 @@ function main() {
 }
 
 ```
+
+### Intelligence Sort
+
+Assumes that input values are already sorted by divine intervention, or it was intended that way by a higher power.
+
+| Param                 | type            | Optional? | Default value | Description                                                                                    |
+|-----------------------|-----------------|-----------|---------------|------------------------------------------------------------------------------------------------|
+| values                | `number[]`      | No        | -             | An array of numbers                                                                            |
+
+```ts
+
+import { intelligenceSort } from '@27-lanterns/a-bunch-of-sorts';
+
+function main() {
+    const array = [1,2,2,3,4,5,0,6,6,5,7,9,10];
+
+    intelligenceSort(array);
+    // [1,2,2,3,4,5,0,6,6,5,7,9,10]
+}
+```
